@@ -32,6 +32,7 @@ body {
 }
 
 .logo h1 {
+    display: flex;
     font-size: 32px;
     font-weight: 600;
     margin-left: 32px;
