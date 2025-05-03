@@ -243,7 +243,7 @@ nav a:hover {
 /* 渐变条样式 */
 #gradient-bar {
     height: 24px;
-    background: linear-gradient(to right, rgb(41,45,149), rgb(255,255,190), rgb(165,0,38)); /* 蓝黄红渐变 */
+    background: linear-gradient(to right, rgb(0, 47, 135), rgb(135, 206, 235), rgb(255, 255, 255), rgb(255, 255, 165), rgb(255, 165, 0), rgb(204, 0, 0)); /* 蓝黄红渐变 */
     border-radius: 5px;
     z-index: 1000;
 }
