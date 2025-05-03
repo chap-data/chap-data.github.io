@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ChinaHighAirPollutants</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="header">
+        <div class="logo">
+            <!-- <span>logo</span> -->
+            <img src="./logo_white.png"></img>
+            <h1>ChinaHighAirPollutants</h1>
+        </div>
+        <div class="menu">
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Introduction</a>
+                <a href="#">Team</a>
+                <a href="#">Other</a>
+            </nav>
+        </div>
+    </div>
+    <div id="map"></div>
+    <!-- 气体类型切换工具条 -->
+    <div id="type-toolbar">
+        <button id="type-o3" class="type-button selected" title="O3">O3</button>
+        <button id="type-no2" class="type-button" title="NO2">NO2</button>
+    </div>
+    <!-- 地图工具条 -->
+    <div id="toolbar">
+        <button id="reset-view" title="全图复位">
+            <i class="fas fa-home"></i>
+        </button>
+        <button id="toggle-basemap" title="切换底图">
+            <i class="fas fa-map"></i>
+        </button>
+    </div>
+    <!-- 时间滑动条 -->
+    <div id="timeline-container">
+        <div id="timeline-header">
+            <div id="play-section">
+                <button id="play-button">▶</button>
+                <span id="timestamp">2024-01-18 14:30</span>
+            </div>
+            <div id="time-buttons">
+                <!-- <button id="time-button">1小时</button>
+                <button id="time-button">1天</button>
+                <button id="time-button">1周</button> -->
+                <input type="date" id="date-picker">
+            </div>
+        </div>
+        <input type="range" id="timeline-slider" min="0" max="100" value="100">
+    </div>
+    <div id="gradient-bar-container">
+        <div id="gradient-bar"></div>
+    </div>
+    <div id="footer">
+        copyright@2025
+    </div>
+</body>
+<script src="./script.js"></script>
+</html>
