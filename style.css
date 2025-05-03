@@ -226,9 +226,8 @@ nav a:hover {
     cursor: pointer;
     border: none;
 }
+
 /****************图例****************/
-/* 渐变条容器样式 */
-<style>
 /******** 图例容器 ********/
 #gradient-bar-container {
     position: absolute;
