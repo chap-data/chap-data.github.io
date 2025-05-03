@@ -32,6 +32,7 @@ body {
 }
 
 .logo h1 {
+    white-space: nowrap; /* 避免换行 */
     font-size: 32px;
     font-weight: 600;
     margin-left: 32px;
