@@ -230,6 +230,7 @@ nav a:hover {
 /* 渐变条容器样式 */
 #gradient-bar-container {
     position: absolute;
+    display: flex;
     bottom: 8px; /* 与时间条对齐 */
     right: 8px; /* 靠右对齐 */
     background: rgba(255, 255, 255, 0.9);
@@ -269,7 +270,7 @@ nav a:hover {
     position: absolute;
     top: 25px;
     transform: translateX(-50%);
-    font-size: 12px;
+    font-size: 15px;
     color: #333;
 /****************底部****************/
 #footer {
