@@ -57,6 +57,19 @@
         </div>
         <input type="range" id="timeline-slider" min="0" max="100" value="100">
     </div>
+
+    <div style="position: absolute; bottom: 20px; right: 20px; padding: 8px; background: rgba(255,255,255,0.8); border-radius: 10px;">
+      <div style="font-weight: bold; margin-bottom: 5px;">O₃ (µg/m³):</div>
+      <div style="position: relative; height: 20px; width: 300px; background: linear-gradient(to right, green, yellow, orange, red, purple); border-radius: 10px;">
+        <!-- 刻度 -->
+        <div style="position: absolute; left: 0%; transform: translateX(-50%); color: white; font-size: 12px;">35</div>
+        <div style="position: absolute; left: 25%; transform: translateX(-50%); color: white; font-size: 12px;">75</div>
+        <div style="position: absolute; left: 50%; transform: translateX(-50%); color: white; font-size: 12px;">115</div>
+        <div style="position: absolute; left: 75%; transform: translateX(-50%); color: white; font-size: 12px;">150</div>
+        <div style="position: absolute; left: 100%; transform: translateX(-50%); color: white; font-size: 12px;">250</div>
+      </div>
+    </div>
+
     <div id="gradient-bar-container">
         <div id="gradient-bar"></div>
     </div>
