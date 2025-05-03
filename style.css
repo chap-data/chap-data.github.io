@@ -231,6 +231,8 @@ nav a:hover {
 #gradient-bar-container {
     position: absolute;
     display: flex;
+    align-items: center;
+    text-align: center;
     bottom: 8px; /* 与时间条对齐 */
     right: 8px; /* 靠右对齐 */
     background: rgba(255, 255, 255, 0.9);
@@ -238,7 +240,6 @@ nav a:hover {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     z-index: 1000;
-    text-align: center;
     width: 380px; /* 渐变条宽度 */
 }
 
@@ -268,10 +269,13 @@ nav a:hover {
 
 .tick-label {
     position: absolute;
-    top: 25px;
+    top: 28px;
     transform: translateX(-50%);
-    font-size: 15px;
-    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px black; /* 提升可读性 */
+}
 /****************底部****************/
 #footer {
     position: absolute;
