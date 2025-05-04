@@ -233,7 +233,7 @@ nav a:hover {
     position: absolute;
     display: flex;
     align-items: center;
-    bottom: 8px;
+    bottom: 38px;
     right: 8px;
     background: rgba(255, 255, 255, 0.9);
     padding: 6px 10px;
@@ -253,7 +253,7 @@ nav a:hover {
 /******** 色带容器 ********/
 #gradient-bar-wrapper {
     position: relative;
-    width: 500px;
+    width: 1000px;
     height: 24px;
 }
 
