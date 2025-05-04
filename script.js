@@ -1,14 +1,15 @@
-
-var isImagery = true; // 当前是否为影像图
 var imageryLayer = L.tileLayer('https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}')
-var streetLayer = L.tileLayer('https://services.arcgisonline.com/arcgis/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}')
+var streetLayer = L.tileLayer('https://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}')
+var terrainLayer = L.tileLayer('https://services.arcgisonline.com/arcgis/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}')
+var baseMaps = [imageryLayer, streetLayer, terrainLayer];
+var currentBaseMapIndex = 0;
 // 初始化地图
 var map = L.map('map', {
     // crs: L.CRS.EPSG4326, 
     zoomControl: false,
     minZoom: 4,
 }).setView([36, 105], 4); // 设置初始中心点和缩放级别
-streetLayer.addTo(map); // 添加影像图层
+imageryLayer.addTo(map); // 添加影像图层
 var indexData=null; // 用于存储索引数据
 var selectDay=""; // 用于存储选择的日期
 var selectType="type-o3"; // 用于存储选择的类型
@@ -22,14 +23,14 @@ document.getElementById('reset-view').addEventListener('click', function () {
 });
 // 底图切换事件
 document.getElementById('toggle-basemap').addEventListener('click', function () {
-    if (isImagery) {
-        map.removeLayer(imageryLayer);
-        streetLayer.addTo(map);
-    } else {
-        map.removeLayer(streetLayer);
-        imageryLayer.addTo(map);
-    }
-    isImagery = !isImagery; // 切换状态
+    // 移除当前底图
+    map.removeLayer(baseMaps[currentBaseMapIndex]);
+
+    // 切换到下一个底图
+    currentBaseMapIndex = (currentBaseMapIndex + 1) % baseMaps.length;
+
+    // 添加新的底图
+    baseMaps[currentBaseMapIndex].addTo(map);
 });
 // 放大按钮事件
 document.getElementById('zoom-in').addEventListener('click', function () {
