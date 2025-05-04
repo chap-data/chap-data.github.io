@@ -79,6 +79,22 @@ nav a:hover {
     display: none !important;
 }
 
+/****************最上面时间信息****************/
+#top-time-box {
+    position: absolute;
+    top: 88px; /* 你顶部 header 和 menu 共高度是 80 + 48 = 128，可根据需求调整 */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    font-size: 14px;
+    color: #1e78dc;
+    font-weight: bold;
+}
+
 /****************类型切换工具条****************/
 #type-toolbar {
     position: absolute; 
