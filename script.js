@@ -138,7 +138,7 @@ function updateImageOverlay(dayhour) {
 */
 function updateLegendLabel() {
     if (selectType == "type-pm2.5") {
-        document.getElementById('gas-label').innerHTML = 'PM2.5(ug/m3)';
+        document.getElementById('gas-label').innerHTML = 'PM<sub>2.5</sub> (&mu;g/m<sup>3</sup>)';
         document.getElementById('tick0').innerHTML = '25';
         document.getElementById('tick1').innerHTML = '50';
         document.getElementById('tick2').innerHTML = '75';
@@ -147,16 +147,16 @@ function updateLegendLabel() {
         document.getElementById('tick5').innerHTML = '150';
         document.getElementById('tick6').innerHTML = '175';
     }else if (selectType == "type-no2") {
-        document.getElementById('gas-label').innerHTML = 'NO2(ug/m3)';
-        document.getElementById('tick0').innerHTML = '25';
-        document.getElementById('tick1').innerHTML = '50';
-        document.getElementById('tick2').innerHTML = '75';
-        document.getElementById('tick3').innerHTML = '100';
-        document.getElementById('tick4').innerHTML = '125';
-        document.getElementById('tick5').innerHTML = '150';
-        document.getElementById('tick6').innerHTML = '175';
+        document.getElementById('gas-label').innerHTML = 'NO<sub>2</sub> (&mu;g/m<sup>3</sup>)';
+        document.getElementById('tick0').innerHTML = '12.5';
+        document.getElementById('tick1').innerHTML = '25';
+        document.getElementById('tick2').innerHTML = '37.5';
+        document.getElementById('tick3').innerHTML = '50';
+        document.getElementById('tick4').innerHTML = '62.5';
+        document.getElementById('tick5').innerHTML = '75';
+        document.getElementById('tick6').innerHTML = '87.5';
     }else{
-        document.getElementById('gas-label').innerHTML = 'O3(ug/m3)';
+        document.getElementById('gas-label').innerHTML = 'O<sub>3</sub> (&mu;g/m<sup>3</sup>)';
         document.getElementById('tick0').innerHTML = '25';
         document.getElementById('tick1').innerHTML = '50';
         document.getElementById('tick2').innerHTML = '75';
