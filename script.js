@@ -18,7 +18,7 @@ var currentOverlay; // 用于存储当前的图片覆盖层
 /***********************************事件定义********************************************/
 // 全图范围事件
 document.getElementById('reset-view').addEventListener('click', function () {
-    map.setView([34, 105], 4)
+    map.setView([36, 105], 4)
 });
 // 底图切换事件
 document.getElementById('toggle-basemap').addEventListener('click', function () {
@@ -30,6 +30,15 @@ document.getElementById('toggle-basemap').addEventListener('click', function () 
         imageryLayer.addTo(map);
     }
     isImagery = !isImagery; // 切换状态
+});
+// 放大按钮事件
+document.getElementById('zoom-in').addEventListener('click', function () {
+    map.zoomIn(); // 调用 Leaflet 的 zoomIn 方法
+});
+
+// 缩小按钮事件
+document.getElementById('zoom-out').addEventListener('click', function () {
+    map.zoomOut(); // 调用 Leaflet 的 zoomOut 方法
 });
 // 气体类型切换事件
 function changeGasType(event) {
@@ -66,6 +75,39 @@ document.getElementById('timeline-slider').addEventListener('input', function ()
     const dayhour = selectDay+indexData[selectDay][index];
     label.innerHTML = `${dayhour.slice(0,4)}-${dayhour.slice(4,6)}-${dayhour.slice(6,8)} ${dayhour.slice(-2)}:00`;
     updateImageOverlay(dayhour); // 更新地图图片
+});
+let playInterval = null; // 用于存储播放的定时器
+
+// 播放按钮事件
+document.getElementById('play-button').addEventListener('click', function () {
+    const slider = document.getElementById('timeline-slider');
+    const max = parseInt(slider.max, 10);
+
+    // 如果已经在播放，停止播放
+    if (playInterval) {
+        clearInterval(playInterval);
+        playInterval = null;
+        this.textContent = '▶'; // 恢复播放按钮图标
+        return;
+    }
+
+    // 从头开始播放
+    slider.value = 0;
+    this.textContent = '⏸'; // 切换为暂停图标
+
+    // 开始自动播放
+    playInterval = setInterval(() => {
+        let currentValue = parseInt(slider.value, 10);
+
+        if (currentValue < max) {
+            slider.value = currentValue + 1; // 增加滑动条的值
+            slider.dispatchEvent(new Event('input')); // 触发滑动条的 input 事件
+        } else {
+            clearInterval(playInterval); // 停止播放
+            playInterval = null;
+            this.textContent = '▶'; // 恢复播放按钮图标
+        }
+    }, 1000); // 每秒更新一次
 });
 
 /*
