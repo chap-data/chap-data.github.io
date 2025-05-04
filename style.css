@@ -134,7 +134,7 @@ nav a:hover {
 #timeline-container {
     position: absolute;
     left: 8px;
-    bottom: 8px;
+    bottom: 30px;
     background-color: white;
     padding: 8px;
     border-radius: 8px;
