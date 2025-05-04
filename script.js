@@ -7,7 +7,7 @@ var map = L.map('map', {
     // crs: L.CRS.EPSG4326, 
     zoomControl: false,
     minZoom: 4,
-}).setView([34, 105], 4); // 设置初始中心点和缩放级别
+}).setView([36, 105], 4); // 设置初始中心点和缩放级别
 streetLayer.addTo(map); // 添加影像图层
 var indexData=null; // 用于存储索引数据
 var selectDay=""; // 用于存储选择的日期
