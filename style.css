@@ -95,7 +95,7 @@ nav a:hover {
     font-weight: bold;
 }
 
-/****************类型切换工具条****************/
+/****************污染物类型切换工具条****************/
 #type-toolbar {
     position: absolute; 
     top: 136px;
@@ -114,8 +114,11 @@ nav a:hover {
     border-radius: 3px;
     cursor: pointer;
     font-size: 14px;
-    width: 48px;
+    width: 52px;
     height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .type-button.selected {
@@ -271,7 +274,7 @@ nav a:hover {
 /******** 色带容器 ********/
 #gradient-bar-wrapper {
     position: relative;
-    width: 450px;
+    width: 430px;
     height: 24px;
 }
 
