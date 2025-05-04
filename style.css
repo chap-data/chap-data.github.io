@@ -116,9 +116,7 @@ nav a:hover {
     font-size: 14px;
     width: 52px;
     height: 38px;
-    display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 .type-button.selected {
