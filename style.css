@@ -293,7 +293,7 @@ nav a:hover {
     position: absolute;
     left: 0px;
     right: 0px;
-    bottom: 0px;
+    bottom: 10px;
     z-index: 1000;
     font-size: 14px;
     text-align: center;
