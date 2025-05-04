@@ -191,13 +191,13 @@ function updateLegendLabel() {
         document.getElementById('tick6').innerHTML = '175';
     }else if (selectType == "type-no2") {
         document.getElementById('gas-label').innerHTML = 'NO<sub>2</sub> (&mu;g/m<sup>3</sup>):';
-        document.getElementById('tick0').innerHTML = '12.5';
-        document.getElementById('tick1').innerHTML = '25';
-        document.getElementById('tick2').innerHTML = '37.5';
-        document.getElementById('tick3').innerHTML = '50';
-        document.getElementById('tick4').innerHTML = '62.5';
-        document.getElementById('tick5').innerHTML = '75';
-        document.getElementById('tick6').innerHTML = '87.5';
+        document.getElementById('tick0').innerHTML = '10';
+        document.getElementById('tick1').innerHTML = '20';
+        document.getElementById('tick2').innerHTML = '30';
+        document.getElementById('tick3').innerHTML = '40';
+        document.getElementById('tick4').innerHTML = '50';
+        document.getElementById('tick5').innerHTML = '60';
+        document.getElementById('tick6').innerHTML = '70';
     }else{
         document.getElementById('gas-label').innerHTML = 'O<sub>3</sub> (&mu;g/m<sup>3</sup>):';
         document.getElementById('tick0').innerHTML = '25';
