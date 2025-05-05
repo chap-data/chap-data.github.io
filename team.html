@@ -3,65 +3,65 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Team - ChinaHighAirPollutants</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <link rel="stylesheet" href="./style.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>ChinaHighAirPollutants - Team</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
     <style>
-        /* Add some basic styles for the Team page */
-        .team-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 20px;
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
         }
 
-        .team-title {
-            font-size: 2em;
-            margin-bottom: 20px;
+        .section-title {
+            font-size: 24px;
+            color: #2e7d32;
+            margin: 40px 20px 20px;
+            border-left: 6px solid #66bb6a;
+            padding-left: 10px;
         }
 
-        .team-member {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 10px;
-        }
-
-        .team-member img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-        }
-
-        .team-member h3 {
-            margin: 10px 0;
-            font-size: 1.2em;
-        }
-
-        .team-member p {
-            font-size: 1em;
-            text-align: center;
-        }
-
-        .team-group {
-            margin-top: 30px;
-        }
-
-        .group-title {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-
-        .member-list {
+        .team-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            padding: 0 10px 40px;
         }
 
-        .member-list .team-member {
-            margin: 20px;
+        .member-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: 15px;
+            display: flex;
+            align-items: center;
+            padding: 15px;
+        }
+
+        .member-photo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+
+        .member-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .member-name {
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .member-affiliation {
+            font-size: 14px;
+            color: #555;
         }
     </style>
 </head>
@@ -69,7 +69,7 @@
 <body>
     <div id="header">
         <div class="logo">
-            <img src="./logo_white.png" alt="Logo">
+            <img src="./logo_white.png" alt="logo">
             <h1>Near Real-Time (NRT)</h1>
         </div>
         <div class="menu">
@@ -82,44 +82,41 @@
         </div>
     </div>
 
-    <div class="team-section">
-        <h2 class="team-title">Our Team</h2>
-
-        <div class="team-group">
-            <h3 class="group-title">Guidance Committee</h3>
-            <div class="member-list">
-                <div class="team-member">
-                    <img src="./member1.jpg" alt="Member 1">
-                    <h3>Dr. John Doe</h3>
-                    <p>Lead Scientist</p>
-                </div>
-                <div class="team-member">
-                    <img src="./member2.jpg" alt="Member 2">
-                    <h3>Prof. Jane Smith</h3>
-                    <p>Expert in Air Quality</p>
-                </div>
-                <!-- Add more members as needed -->
+    <h2 class="section-title">Steering Committee</h2>
+    <div class="team-container">
+        <div class="member-card">
+            <img class="member-photo" src="./img/kebin_he.jpg" alt="Kebin He">
+            <div class="member-info">
+                <div class="member-name">Kebin He</div>
+                <div class="member-affiliation">Tsinghua University</div>
             </div>
         </div>
-
-        <div class="team-group">
-            <h3 class="group-title">Working Groups</h3>
-            <div class="member-list">
-                <div class="team-member">
-                    <img src="./member3.jpg" alt="Member 3">
-                    <h3>Dr. Alice Brown</h3>
-                    <p>Data Science & AI Specialist</p>
-                </div>
-                <div class="team-member">
-                    <img src="./member4.jpg" alt="Member 4">
-                    <h3>Dr. Bob White</h3>
-                    <p>Air Quality Monitoring Lead</p>
-                </div>
-                <!-- Add more members as needed -->
+        <div class="member-card">
+            <img class="member-photo" src="./img/tong_zhu.jpg" alt="Tong Zhu">
+            <div class="member-info">
+                <div class="member-name">Tong Zhu</div>
+                <div class="member-affiliation">Peking University</div>
             </div>
         </div>
     </div>
 
+    <h2 class="section-title">Working Group</h2>
+    <div class="team-container">
+        <div class="member-card">
+            <img class="member-photo" src="./img/guannan_geng.jpg" alt="Guannan Geng">
+            <div class="member-info">
+                <div class="member-name">Guannan Geng</div>
+                <div class="member-affiliation">Tsinghua University</div>
+            </div>
+        </div>
+        <div class="member-card">
+            <img class="member-photo" src="./img/qingyang_xiao.jpg" alt="Qingyang Xiao">
+            <div class="member-info">
+                <div class="member-name">Qingyang Xiao</div>
+                <div class="member-affiliation">Tsinghua University</div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
