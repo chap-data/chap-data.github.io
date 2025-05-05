@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>ChinaHighAirPollutants - Team</title>
+    <title>ChinaHighAirPollutants</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="./style.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
@@ -12,33 +13,6 @@
             font-family: Arial, sans-serif;
             margin: 0;
             background-color: #f9f9f9;
-        }
-
-        #header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #2c7a7b;
-            padding: 10px 20px;
-            color: white;
-        }
-
-        .logo img {
-            height: 40px;
-            vertical-align: middle;
-        }
-
-        .logo h1 {
-            display: inline-block;
-            font-size: 20px;
-            margin-left: 10px;
-        }
-
-        .menu nav a {
-            margin: 0 15px;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
         }
 
         .team-section {
@@ -63,12 +37,12 @@
         }
 
         .team-member {
-            background-color: #f2f2f2;
+            background-color: #f0f0f0;
             border-radius: 10px;
             display: flex;
             align-items: center;
             padding: 12px;
-            width: calc(25% - 20px); /* 4 per row */
+            width: calc(25% - 20px); /* 4 items per row */
             min-width: 250px;
         }
 
@@ -90,6 +64,34 @@
             margin: 6px 0 0;
             color: #666;
             font-size: 14px;
+        }
+
+        /* Keep your original header style */
+        #header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #003366;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .logo img {
+            height: 40px;
+            vertical-align: middle;
+        }
+
+        .logo h1 {
+            display: inline-block;
+            font-size: 20px;
+            margin-left: 10px;
+        }
+
+        .menu nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -134,54 +136,26 @@
                     <p>Tsinghua University</p>
                 </div>
             </div>
-            <div class="team-member">
-                <img src="member4.jpg" alt="Member 4">
-                <div class="info">
-                    <h4>Prof. Chen Li</h4>
-                    <p>CAS Institute</p>
-                </div>
-            </div>
-            <div class="team-member">
-                <img src="member5.jpg" alt="Member 5">
-                <div class="info">
-                    <h4>Prof. Liu Qing</h4>
-                    <p>HKUST</p>
-                </div>
-            </div>
         </div>
 
         <h2>Working Group</h2>
         <div class="team-container">
             <div class="team-member">
-                <img src="member6.jpg" alt="Member 6">
+                <img src="member4.jpg" alt="Member 4">
                 <div class="info">
                     <h4>Jing Wei</h4>
                     <p>University of Maryland</p>
                 </div>
             </div>
             <div class="team-member">
-                <img src="member7.jpg" alt="Member 7">
+                <img src="member5.jpg" alt="Member 5">
                 <div class="info">
-                    <h4>Dr. Liu Yang</h4>
+                    <h4>Dr. Sun Rui</h4>
                     <p>PKU</p>
                 </div>
             </div>
             <div class="team-member">
-                <img src="member8.jpg" alt="Member 8">
-                <div class="info">
-                    <h4>Dr. Sun Rui</h4>
-                    <p>CUHK</p>
-                </div>
-            </div>
-            <div class="team-member">
-                <img src="member9.jpg" alt="Member 9">
-                <div class="info">
-                    <h4>Dr. Xu Jie</h4>
-                    <p>Zhejiang University</p>
-                </div>
-            </div>
-            <div class="team-member">
-                <img src="member10.jpg" alt="Member 10">
+                <img src="member6.jpg" alt="Member 6">
                 <div class="info">
                     <h4>Dr. Tang Jie</h4>
                     <p>Fudan University</p>
