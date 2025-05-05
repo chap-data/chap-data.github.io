@@ -8,13 +8,93 @@
     <link rel="stylesheet" href="./style.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        #header {
+            background-color: #2c3e50;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+        }
+
+        #header .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        #header .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        #header .menu nav a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #header .menu nav a:hover {
+            text-decoration: underline;
+        }
+
+        .doc-container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            max-height: 75vh;
+            overflow-y: auto;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .url {
+            color: #2980b9;
+            text-decoration: none;
+        }
+
+        .url:hover {
+            text-decoration: underline;
+        }
+
+        strong {
+            color: #2c3e50;
+        }
+
+        h1 {
+            font-size: 20px;
+            margin: 0;
+        }
+    </style>
 </head>
 
 <body>
     <div id="header">
         <div class="logo">
-            <!-- <span>logo</span> -->
-            <img src="./logo_white.png"></img>
+            <img src="./logo_white.png" alt="Logo">
             <h1>Near Real-Time (NRT)</h1>
         </div>
         <div class="menu">
@@ -24,26 +104,44 @@
                 <a href="./team.html">Team</a>
                 <a href="#">Other</a>
             </nav>
-        </div>           
-    </div> 
-
-    <div class="mdui-container doc-container">
-      <div id="Product" style=" font-size:16px;"> 
-        <ul>      
-        <p style="text-align:center;"> <strong><font size="4">ChinaHighAirPollutants (CHAP)</font></strong></p>
-        <li><p><strong>Brief Introduction</strong></p>
-          <p>The ChinaHighAirPollutants (CHAP) dataset refers to the <strong>long-term</strong> and <strong>near-real-time</strong>, <strong>full-coverage</strong>, <strong>high-resolution</strong>, and <strong>high-quality</strong> datasets of ground-level air pollutants for China. 
-            It is generated from the big data (e.g., ground-based measurements, satellite remote sensing products, atmospheric reanalysis, and model simulations) using artificial intelligence by considering the spatiotemporal heterogeneity of air pollution.  
-            The CHAP dataset contains <strong>7</strong> major air pollutants (i.e., <strong>PM<sub>1</sub></strong>, <strong>PM<sub>2.5</sub></strong>, <strong>PM<sub>10</sub></strong>, <strong>O<sub>3</sub></strong>, <strong>NO<sub>2</sub></strong>, <strong>SO<sub>2</sub></strong>, and <strong>CO</strong>), 
-             <strong>PM<sub>2.5</sub> chemical composition (i.e., <strong>SO<sub>4</sub><sup>2-</sup></strong>, <strong>NO<sub>3</sub><sup>-</sup></strong>, <strong>NH<sub>4</sub><sup>+</sup></strong>, <strong>Cl<sup>-</sup></strong>, BC, and OM)</strong>, and ambient <strong>polycyclic aromatic hydrocarbons (PAHs)</strong>, including 7 carcinogenic PAHs (i.e., <strong>BaA</strong>, <strong>Chr</strong>, <strong>BbF</strong>, <strong>BkF</strong>, <strong>BaP</strong>, <strong>DahA</strong>, <strong>IcdP</strong>). 
-            This CHAP dataset is <strong>public</strong> and <strong>freely</strong> open to all users! </p>        
-        </li> 
-    
-        <li><p><strong>Open Platform</strong></p>
-          <p>【<a href='https://weijing-rs.github.io/product.html' target='_blank' class='url'>GitHub</a>】, 【<a href='https://zenodo.org/communities/chap/' target='_blank' class='url'>Zenodo</a>】, 【<a href='http://geodata.nnu.edu.cn/featured_data.html' target='_blank' class='url'>国家地球系统科学数据中心</a>】, 【<a href='https://data.tpdc.ac.cn/projectDataList?specialId=8f82de3c-80ab-4fd9-90b1-9ff8b9813ac5' target='_blank' class='url'>国家青藏高原科学数据中心</a>】</p>
-        </li>    
-       </ul> 
+        </div>
     </div>
 
+    <div class="mdui-container doc-container">
+        <div id="Product">
+            <p style="text-align:center;"><strong><font size="4">ChinaHighAirPollutants (CHAP)</font></strong></p>
+            <ul>
+                <li>
+                    <p><strong>Brief Introduction</strong></p>
+                    <p>
+                        The ChinaHighAirPollutants (CHAP) dataset refers to the <strong>long-term</strong> and <strong>near-real-time</strong>,
+                        <strong>full-coverage</strong>, <strong>high-resolution</strong>, and <strong>high-quality</strong> datasets of ground-level air pollutants for China.
+                        It is generated from the big data (e.g., ground-based measurements, satellite remote sensing products, atmospheric reanalysis,
+                        and model simulations) using artificial intelligence by considering the spatiotemporal heterogeneity of air pollution.
+                    </p>
+                    <p>
+                        The CHAP dataset contains <strong>7</strong> major air pollutants (i.e., <strong>PM<sub>1</sub></strong>, <strong>PM<sub>2.5</sub></strong>,
+                        <strong>PM<sub>10</sub></strong>, <strong>O<sub>3</sub></strong>, <strong>NO<sub>2</sub></strong>, <strong>SO<sub>2</sub></strong>, and <strong>CO</strong>),
+                        <strong>PM<sub>2.5</sub> chemical composition</strong> (i.e., <strong>SO<sub>4</sub><sup>2-</sup></strong>, <strong>NO<sub>3</sub><sup>-</sup></strong>,
+                        <strong>NH<sub>4</sub><sup>+</sup></strong>, <strong>Cl<sup>-</sup></strong>, BC, and OM), and ambient
+                        <strong>polycyclic aromatic hydrocarbons (PAHs)</strong>, including 7 carcinogenic PAHs (i.e., <strong>BaA</strong>, <strong>Chr</strong>,
+                        <strong>BbF</strong>, <strong>BkF</strong>, <strong>BaP</strong>, <strong>DahA</strong>, <strong>IcdP</strong>).
+                        This CHAP dataset is <strong>public</strong> and <strong>freely</strong> open to all users!
+                    </p>
+                </li>
+
+                <li>
+                    <p><strong>Open Platform</strong></p>
+                    <p>
+                        【<a href='https://weijing-rs.github.io/product.html' target='_blank' class='url'>GitHub</a>】,
+                        【<a href='https://zenodo.org/communities/chap/' target='_blank' class='url'>Zenodo</a>】,
+                        【<a href='http://geodata.nnu.edu.cn/featured_data.html' target='_blank' class='url'>国家地球系统科学数据中心</a>】,
+                        【<a href='https://data.tpdc.ac.cn/projectDataList?specialId=8f82de3c-80ab-4fd9-90b1-9ff8b9813ac5' target='_blank' class='url'>国家青藏高原科学数据中心</a>】
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
 </body>
+
 </html>
