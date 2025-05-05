@@ -8,13 +8,11 @@
     <link rel="stylesheet" href="./style.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
     <style>
+        /* 保持 header 和 menu 样式 */
         body {
             margin: 0;
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
         }
 
         #header {
@@ -47,28 +45,30 @@
             text-decoration: underline;
         }
 
-        .doc-container {
+        /* 内容部分 */
+        .mdui-container {
             max-width: 960px;
             margin: 20px auto;
             padding: 20px;
             background: white;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            max-height: 75vh;
-            overflow-y: auto;
+            overflow-y: auto;  /* 开启垂直滚动条 */
+            height: 75vh; /* 限制高度 */
         }
 
-        ul {
+        .doc-container p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .doc-container ul {
             list-style: none;
             padding-left: 0;
         }
 
-        li {
+        .doc-container li {
             margin-bottom: 20px;
-        }
-
-        p {
-            line-height: 1.6;
         }
 
         .url {
@@ -94,6 +94,7 @@
 <body>
     <div id="header">
         <div class="logo">
+            <!-- <span>logo</span> -->
             <img src="./logo_white.png" alt="Logo">
             <h1>Near Real-Time (NRT)</h1>
         </div>
@@ -109,7 +110,9 @@
 
     <div class="mdui-container doc-container">
         <div id="Product">
-            <p style="text-align:center;"><strong><font size="4">ChinaHighAirPollutants (CHAP)</font></strong></p>
+            <p style="text-align:center;">
+                <strong><font size="4">ChinaHighAirPollutants (CHAP)</font></strong>
+            </p>
             <ul>
                 <li>
                     <p><strong>Brief Introduction</strong></p>
@@ -118,8 +121,6 @@
                         <strong>full-coverage</strong>, <strong>high-resolution</strong>, and <strong>high-quality</strong> datasets of ground-level air pollutants for China.
                         It is generated from the big data (e.g., ground-based measurements, satellite remote sensing products, atmospheric reanalysis,
                         and model simulations) using artificial intelligence by considering the spatiotemporal heterogeneity of air pollution.
-                    </p>
-                    <p>
                         The CHAP dataset contains <strong>7</strong> major air pollutants (i.e., <strong>PM<sub>1</sub></strong>, <strong>PM<sub>2.5</sub></strong>,
                         <strong>PM<sub>10</sub></strong>, <strong>O<sub>3</sub></strong>, <strong>NO<sub>2</sub></strong>, <strong>SO<sub>2</sub></strong>, and <strong>CO</strong>),
                         <strong>PM<sub>2.5</sub> chemical composition</strong> (i.e., <strong>SO<sub>4</sub><sup>2-</sup></strong>, <strong>NO<sub>3</sub><sup>-</sup></strong>,
@@ -129,7 +130,6 @@
                         This CHAP dataset is <strong>public</strong> and <strong>freely</strong> open to all users!
                     </p>
                 </li>
-
                 <li>
                     <p><strong>Open Platform</strong></p>
                     <p>
