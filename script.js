@@ -118,7 +118,7 @@ function loadData(dayStr) {
     // 根据气体类型确定json路径
     let index_url=""
     if(selectType=="type-pm2.5"){
-        index_url="./PM25/data/sta/index.json"
+        index_url="./PM2_5/data/sta/index.json"
     }else if(selectType=="type-no2"){
         index_url="./NO2/data/sta/index.json"
     }else{
@@ -162,7 +162,7 @@ function loadData(dayStr) {
 function updateImageOverlay(dayhour) {
     let imgUrl=""
     if(selectType=="type-pm2.5"){
-        imgUrl=`./PM25/data/png/Y${dayhour.slice(0,4)}-M${dayhour.slice(4,6)}-D${dayhour.slice(6,8)}/CHAP_NRT_NO2_${dayhour}00.png`;
+        imgUrl=`./PM2_5/data/png/Y${dayhour.slice(0,4)}-M${dayhour.slice(4,6)}-D${dayhour.slice(6,8)}/CHAP_NRT_PM2_5_${dayhour}00.png`;
     }else if(selectType=="type-no2"){
         imgUrl=`./NO2/data/png/Y${dayhour.slice(0,4)}-M${dayhour.slice(4,6)}-D${dayhour.slice(6,8)}/CHAP_NRT_NO2_${dayhour}00.png`;
     }else{
