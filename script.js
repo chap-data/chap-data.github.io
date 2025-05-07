@@ -12,7 +12,7 @@ var map = L.map('map', {
 imageryLayer.addTo(map); // 添加影像图层
 var indexData=null; // 用于存储索引数据
 var selectDay=""; // 用于存储选择的日期
-var selectType="type-pm2.5"; // 用于存储选择的类型
+var selectType="type-pmo3"; // 用于存储选择的类型
 const imageBounds = [[54.0, 72.0], [11.5, 135.5]]; // 图片覆盖范围
 var currentOverlay; // 用于存储当前的图片覆盖层
 
