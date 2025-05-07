@@ -12,7 +12,7 @@ var map = L.map('map', {
 imageryLayer.addTo(map); // 添加影像图层
 var indexData=null; // 用于存储索引数据
 var selectDay=""; // 用于存储选择的日期
-var selectType="type-o3"; // 用于存储选择的类型
+var selectType="type-pm2.5"; // 用于存储选择的类型
 const imageBounds = [[54.0, 72.0], [11.5, 135.5]]; // 图片覆盖范围
 var currentOverlay; // 用于存储当前的图片覆盖层
 
@@ -43,16 +43,22 @@ document.getElementById('zoom-out').addEventListener('click', function () {
 });
 // 气体类型切换事件
 function changeGasType(event) {
-    document.getElementById('type-o3').className='type-button'
     document.getElementById('type-pm2.5').className='type-button'
+    document.getElementById('type-pm10').className='type-button'
+    document.getElementById('type-o3').className='type-button'
     document.getElementById('type-no2').className='type-button'
+    document.getElementById('type-so2').className='type-button'
+    document.getElementById('type-co').className='type-button'
     event.target.classList.add('selected')
     selectType=event.target.id; // 获取用户选择的气体类型
     loadData()
 }
-document.getElementById('type-o3').addEventListener('click', changeGasType);
 document.getElementById('type-pm2.5').addEventListener('click', changeGasType);
+document.getElementById('type-pm10').addEventListener('click', changeGasType);
+document.getElementById('type-o3').addEventListener('click', changeGasType);
 document.getElementById('type-no2').addEventListener('click', changeGasType);
+document.getElementById('type-so2').addEventListener('click', changeGasType);
+document.getElementById('type-co').addEventListener('click', changeGasType);
 
 // 监听日期选择框的变化
 document.getElementById('date-picker').addEventListener('change', function (event) {
@@ -119,8 +125,14 @@ function loadData(dayStr) {
     let index_url=""
     if(selectType=="type-pm2.5"){
         index_url="./PM2_5/data/sta/index.json"
+    }else if(selectType=="type-pm10"){
+        index_url="./PM10/data/sta/index.json"
     }else if(selectType=="type-no2"){
         index_url="./NO2/data/sta/index.json"
+    }else if(selectType=="type-so2"){
+        index_url="./SO2/data/sta/index.json"
+    }else if(selectType=="type-co"){
+        index_url="./CO/data/sta/index.json"
     }else{
         index_url="./O3/data/sta/index.json"
     }
@@ -163,8 +175,14 @@ function updateImageOverlay(dayhour) {
     let imgUrl=""
     if(selectType=="type-pm2.5"){
         imgUrl=`./PM2_5/data/png/Y${dayhour.slice(0,4)}-M${dayhour.slice(4,6)}-D${dayhour.slice(6,8)}/CHAP_NRT_PM2_5_${dayhour}00.png`;
+    }else if(selectType=="type-pm10"){
+        imgUrl=`./PM10/data/png/Y${dayhour.slice(0,4)}-M${dayhour.slice(4,6)}-D${dayhour.slice(6,8)}/CHAP_NRT_PM10_${dayhour}00.png`;
     }else if(selectType=="type-no2"){
         imgUrl=`./NO2/data/png/Y${dayhour.slice(0,4)}-M${dayhour.slice(4,6)}-D${dayhour.slice(6,8)}/CHAP_NRT_NO2_${dayhour}00.png`;
+    }else if(selectType=="type-so2"){
+        imgUrl=`./SO2/data/png/Y${dayhour.slice(0,4)}-M${dayhour.slice(4,6)}-D${dayhour.slice(6,8)}/CHAP_NRT_SO2_${dayhour}00.png`;
+    }else if(selectType=="type-co"){
+        imgUrl=`./CO/data/png/Y${dayhour.slice(0,4)}-M${dayhour.slice(4,6)}-D${dayhour.slice(6,8)}/CHAP_NRT_CO_${dayhour}00.png`;
     }else{
         imgUrl=`./O3/data/png/Y${dayhour.slice(0,4)}-M${dayhour.slice(4,6)}-D${dayhour.slice(6,8)}/CHAP_NRT_O3_${dayhour}00.png`;
     }
@@ -189,6 +207,15 @@ function updateLegendLabel() {
         document.getElementById('tick4').innerHTML = '150';
         document.getElementById('tick5').innerHTML = '180';
         document.getElementById('tick6').innerHTML = '210';
+    }else if (selectType == "type-pm10") {
+        document.getElementById('gas-label').innerHTML = 'PM<sub>10</sub> (&mu;g/m<sup>3</sup>):';
+        document.getElementById('tick0').innerHTML = '50';
+        document.getElementById('tick1').innerHTML = '100';
+        document.getElementById('tick2').innerHTML = '150';
+        document.getElementById('tick3').innerHTML = '200';
+        document.getElementById('tick4').innerHTML = '250';
+        document.getElementById('tick5').innerHTML = '300';
+        document.getElementById('tick6').innerHTML = '350';
     }else if (selectType == "type-no2") {
         document.getElementById('gas-label').innerHTML = 'NO<sub>2</sub> (&mu;g/m<sup>3</sup>):';
         document.getElementById('tick0').innerHTML = '10';
@@ -198,6 +225,24 @@ function updateLegendLabel() {
         document.getElementById('tick4').innerHTML = '50';
         document.getElementById('tick5').innerHTML = '60';
         document.getElementById('tick6').innerHTML = '70';
+    }else if (selectType == "type-so2") {
+        document.getElementById('gas-label').innerHTML = 'SO<sub>2</sub> (&mu;g/m<sup>3</sup>):';
+        document.getElementById('tick0').innerHTML = '3';
+        document.getElementById('tick1').innerHTML = '6';
+        document.getElementById('tick2').innerHTML = '9';
+        document.getElementById('tick3').innerHTML = '12';
+        document.getElementById('tick4').innerHTML = '15';
+        document.getElementById('tick5').innerHTML = '18';
+        document.getElementById('tick6').innerHTML = '21';
+    }else if (selectType == "type-co") {
+        document.getElementById('gas-label').innerHTML = 'CO (mg/m<sup>3</sup>):';
+        document.getElementById('tick0').innerHTML = '0.3';
+        document.getElementById('tick1').innerHTML = '0.6';
+        document.getElementById('tick2').innerHTML = '0.9';
+        document.getElementById('tick3').innerHTML = '1.2';
+        document.getElementById('tick4').innerHTML = '1.5';
+        document.getElementById('tick5').innerHTML = '1.8';
+        document.getElementById('tick6').innerHTML = '2.1';
     }else{
         document.getElementById('gas-label').innerHTML = 'O<sub>3</sub> (&mu;g/m<sup>3</sup>):';
         document.getElementById('tick0').innerHTML = '30';
