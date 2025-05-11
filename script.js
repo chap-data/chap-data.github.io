@@ -43,6 +43,7 @@ document.getElementById('zoom-out').addEventListener('click', function () {
 });
 // 气体类型切换事件
 function changeGasType(event) {
+    document.getElementById('type-aqi').className='type-button'
     document.getElementById('type-pm2.5').className='type-button'
     document.getElementById('type-pm10').className='type-button'
     document.getElementById('type-o3').className='type-button'
@@ -53,6 +54,7 @@ function changeGasType(event) {
     selectType=event.target.id; // 获取用户选择的气体类型
     loadData()
 }
+document.getElementById('type-aqi').addEventListener('click', changeGasType);
 document.getElementById('type-pm2.5').addEventListener('click', changeGasType);
 document.getElementById('type-pm10').addEventListener('click', changeGasType);
 document.getElementById('type-o3').addEventListener('click', changeGasType);
@@ -123,7 +125,9 @@ document.getElementById('play-button').addEventListener('click', function () {
 function loadData(dayStr) {
     // 根据气体类型确定json路径
     let index_url=""
-    if(selectType=="type-pm2.5"){
+    if(selectType=="type-aqi"){
+        index_url="./AQI/data/sta/index.json"
+    }else if(selectType=="type-pm2.5"){
         index_url="./PM2_5/data/sta/index.json"
     }else if(selectType=="type-pm10"){
         index_url="./PM10/data/sta/index.json"
@@ -173,7 +177,9 @@ function loadData(dayStr) {
  */
 function updateImageOverlay(dayhour) {
     let imgUrl=""
-    if(selectType=="type-pm2.5"){
+    if(selectType=="type-aqi"){
+        imgUrl=`./AQI/data/png/Y${dayhour.slice(0,4)}-M${dayhour.slice(4,6)}-D${dayhour.slice(6,8)}/CHAP_NRT_AQI_${dayhour}00.png`;
+    }else if(selectType=="type-pm2.5"){
         imgUrl=`./PM2_5/data/png/Y${dayhour.slice(0,4)}-M${dayhour.slice(4,6)}-D${dayhour.slice(6,8)}/CHAP_NRT_PM2_5_${dayhour}00.png`;
     }else if(selectType=="type-pm10"){
         imgUrl=`./PM10/data/png/Y${dayhour.slice(0,4)}-M${dayhour.slice(4,6)}-D${dayhour.slice(6,8)}/CHAP_NRT_PM10_${dayhour}00.png`;
@@ -198,7 +204,16 @@ function updateImageOverlay(dayhour) {
  *根据气体类型更新图例   
 */
 function updateLegendLabel() {
-    if (selectType == "type-pm2.5") {
+    if (selectType == "type-aqi") {
+        document.getElementById('gas-label').innerHTML = 'AQI:';
+        document.getElementById('tick0').innerHTML = '50';
+        document.getElementById('tick1').innerHTML = '100';
+        document.getElementById('tick2').innerHTML = '150';
+        document.getElementById('tick3').innerHTML = '200';
+        document.getElementById('tick4').innerHTML = '250';
+        document.getElementById('tick5').innerHTML = '300';
+        document.getElementById('tick6').innerHTML = '350';
+    }else if (selectType == "type-pm2.5") {
         document.getElementById('gas-label').innerHTML = 'PM<sub>2.5</sub> (&mu;g/m<sup>3</sup>):';
         document.getElementById('tick0').innerHTML = '30';
         document.getElementById('tick1').innerHTML = '60';
