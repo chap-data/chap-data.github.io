@@ -242,13 +242,13 @@ function updateLegendLabel() {
         document.getElementById('tick6').innerHTML = '70';
     }else if (selectType == "type-so2") {
         document.getElementById('gas-label').innerHTML = 'SO<sub>2</sub> (&mu;g/m<sup>3</sup>):';
-        document.getElementById('tick0').innerHTML = '3';
-        document.getElementById('tick1').innerHTML = '6';
-        document.getElementById('tick2').innerHTML = '9';
-        document.getElementById('tick3').innerHTML = '12';
-        document.getElementById('tick4').innerHTML = '15';
-        document.getElementById('tick5').innerHTML = '18';
-        document.getElementById('tick6').innerHTML = '21';
+        document.getElementById('tick0').innerHTML = '10';
+        document.getElementById('tick1').innerHTML = '20';
+        document.getElementById('tick2').innerHTML = '30';
+        document.getElementById('tick3').innerHTML = '40';
+        document.getElementById('tick4').innerHTML = '50';
+        document.getElementById('tick5').innerHTML = '60';
+        document.getElementById('tick6').innerHTML = '70';
     }else if (selectType == "type-co") {
         document.getElementById('gas-label').innerHTML = 'CO (mg/m<sup>3</sup>):';
         document.getElementById('tick0').innerHTML = '0.3';
