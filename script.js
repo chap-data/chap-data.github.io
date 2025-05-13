@@ -192,12 +192,20 @@ function updateImageOverlay(dayhour) {
     }else{
         imgUrl=`./O3/data/png/Y${dayhour.slice(0,4)}-M${dayhour.slice(4,6)}-D${dayhour.slice(6,8)}/CHAP_NRT_O3_${dayhour}00.png`;
     }
-    // 如果已有覆盖层，先移除
-    if (currentOverlay) {
-        map.removeLayer(currentOverlay);
-    }
-    // 添加新的图片覆盖层
-    currentOverlay = L.imageOverlay(imgUrl, imageBounds).addTo(map);
+    
+    // 创建一个 Image 对象用于预加载图片
+    const img = new Image();
+    img.src = imgUrl;
+
+    // 当图片加载完成后再更新地图覆盖层
+    img.onload = function () {
+        // 如果已有覆盖层，先移除
+        if (currentOverlay) {
+            map.removeLayer(currentOverlay);
+        }
+        // 添加新的图片覆盖层
+        currentOverlay = L.imageOverlay(imgUrl, imageBounds).addTo(map);
+    };
 }
 
 /*
