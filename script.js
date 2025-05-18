@@ -250,13 +250,13 @@ function updateLegendLabel() {
         document.getElementById('tick6').innerHTML = '70';
     }else if (selectType == "type-so2") {
         document.getElementById('gas-label').innerHTML = 'SO<sub>2</sub> (&mu;g/m<sup>3</sup>):';
-        document.getElementById('tick0').innerHTML = '10';
-        document.getElementById('tick1').innerHTML = '20';
-        document.getElementById('tick2').innerHTML = '30';
-        document.getElementById('tick3').innerHTML = '40';
-        document.getElementById('tick4').innerHTML = '50';
-        document.getElementById('tick5').innerHTML = '60';
-        document.getElementById('tick6').innerHTML = '70';
+        document.getElementById('tick0').innerHTML = '15';
+        document.getElementById('tick1').innerHTML = '30';
+        document.getElementById('tick2').innerHTML = '45';
+        document.getElementById('tick3').innerHTML = '60';
+        document.getElementById('tick4').innerHTML = '75';
+        document.getElementById('tick5').innerHTML = '90';
+        document.getElementById('tick6').innerHTML = '105';
     }else if (selectType == "type-co") {
         document.getElementById('gas-label').innerHTML = 'CO (mg/m<sup>3</sup>):';
         document.getElementById('tick0').innerHTML = '0.3';
@@ -268,13 +268,13 @@ function updateLegendLabel() {
         document.getElementById('tick6').innerHTML = '2.1';
     }else{
         document.getElementById('gas-label').innerHTML = 'O<sub>3</sub> (&mu;g/m<sup>3</sup>):';
-        document.getElementById('tick0').innerHTML = '50';
-        document.getElementById('tick1').innerHTML = '100';
-        document.getElementById('tick2').innerHTML = '150';
-        document.getElementById('tick3').innerHTML = '200';
-        document.getElementById('tick4').innerHTML = '250';
-        document.getElementById('tick5').innerHTML = '300';
-        document.getElementById('tick6').innerHTML = '350';
+        document.getElementById('tick0').innerHTML = '40';
+        document.getElementById('tick1').innerHTML = '80';
+        document.getElementById('tick2').innerHTML = '120';
+        document.getElementById('tick3').innerHTML = '160';
+        document.getElementById('tick4').innerHTML = '200';
+        document.getElementById('tick5').innerHTML = '240';
+        document.getElementById('tick6').innerHTML = '280';
     }
 }
 
