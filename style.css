@@ -79,23 +79,6 @@ nav a:hover {
 .leaflet-control-attribution {
     display: none !important;
 }
-
-/****************最上面时间信息****************/
-#top-time-box {
-    position: absolute;
-    top: 88px; /* 你顶部 header 和 menu 共高度是 80 + 48 = 128，可根据需求调整 */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: white;
-    padding: 6px 12px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    font-size: 14px;
-    color: #1e78dc;
-    font-weight: bold;
-}
-
 /****************污染物类型切换工具条****************/
 #type-toolbar {
     position: absolute; 
@@ -124,6 +107,29 @@ nav a:hover {
     background: #007bff;
     color: white;
     font-weight: bold;
+}
+/****************时钟工具条****************/
+#top-clock {
+    position: absolute;
+    top: 136px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    text-align: center;
+    z-index: 1000;
+    pointer-events: none;
+}
+#top-clock .clock-time {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+#top-clock .clock-date {
+    font-size: 1rem;
+    opacity: 0.8;
+    font-weight: 600;
+    margin-top: 2px;
 }
 /****************地图工具条****************/
 /* 工具条样式 */
