@@ -209,7 +209,7 @@ function getColor(field, val) {
         } else {
             return colors[8];
         }
-    } else if (field == "PM2_5") {
+    } else if (field == "PM<sub>2.5</sub>") {
         if (val == 0) {
             return colors[0];
         } else if (val <= 30) {
@@ -306,7 +306,7 @@ function updateMEE(dayhour) {
     // 选择不同的字段
     let fieldMap = {
         "type-aqi": "AQI",
-        "type-pm2.5": "PM2_5",
+        "type-pm2.5": "PM<sub>2.5</sub>",
         "type-pm10": "PM10",
         "type-no2": "NO2",
         "type-so2": "SO2",
