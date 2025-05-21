@@ -463,13 +463,13 @@ function updateLegendLabel() {
         document.getElementById('tick6').innerHTML = '2.1';
     } else {
         document.getElementById('gas-label').innerHTML = 'O<sub>3</sub> (&mu;g/m<sup>3</sup>):';
-        document.getElementById('tick0').innerHTML = '50';
-        document.getElementById('tick1').innerHTML = '100';
-        document.getElementById('tick2').innerHTML = '150';
-        document.getElementById('tick3').innerHTML = '200';
-        document.getElementById('tick4').innerHTML = '250';
-        document.getElementById('tick5').innerHTML = '300';
-        document.getElementById('tick6').innerHTML = '350';
+        document.getElementById('tick0').innerHTML = '40';
+        document.getElementById('tick1').innerHTML = '80';
+        document.getElementById('tick2').innerHTML = '120';
+        document.getElementById('tick3').innerHTML = '160';
+        document.getElementById('tick4').innerHTML = '200';
+        document.getElementById('tick5').innerHTML = '240';
+        document.getElementById('tick6').innerHTML = '280';
     }
 }
 
