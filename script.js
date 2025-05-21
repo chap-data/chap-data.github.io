@@ -189,7 +189,7 @@ function getColor(field, val) {
         "rgb(246, 123, 74)",
         "rgb(218, 55, 42)",
         "rgb(165, 0, 38)"];
-    if (field == "AQI" || field == "PM10" || field == "O3") {
+    if (field == "AQI" || field == "PM10") {
         if (val == 0) {
             return colors[0];
         } else if (val <= 50) {
@@ -225,6 +225,26 @@ function getColor(field, val) {
         } else if (val <= 180) {
             return colors[6];
         } else if (val <= 210) {
+            return colors[7];
+        } else {
+            return colors[8];
+        }
+    } else if (field == "O3") {
+        if (val == 0) {
+            return colors[0];
+        } else if (val <= 40) {
+            return colors[1];
+        } else if (val <= 80) {
+            return colors[2];
+        } else if (val <= 120) {
+            return colors[3];
+        } else if (val <= 160) {
+            return colors[4];
+        } else if (val <= 200) {
+            return colors[5];
+        } else if (val <= 240) {
+            return colors[6];
+        } else if (val <= 280) {
             return colors[7];
         } else {
             return colors[8];
