@@ -343,7 +343,13 @@ function updateMEE(dayhour) {
                 onEachFeature: function (feature, layer) {
                     let name = feature.properties.name || "";
                     let val = feature.properties[field];
-                    layer.bindPopup(`${name}<br>${field}: ${val}`);
+                    if (field = "PM2_5"){field_ = 'PM<sub>2.5</sub>'};
+                    if (field = "PM10"){field_ = 'PM<sub>10</sub>'};
+                    if (field = "NO2"){field_ = 'NO<sub>2</sub>'};
+                    if (field = "SO2"){field_ = 'SO<sub>2</sub>'};
+                    if (field = "O3"){field_ = 'O<sub>3</sub>'};
+                    popupContent = `${name}<br>${field_}: ${val}`;
+                    layer.bindPopup(popupContent);
                 }
             }).addTo(map);
         })
