@@ -384,19 +384,19 @@ function updateTopClock(dayhour) {
 function updateImageOverlay(dayhour) {
     let imgUrl = ""
     if (selectType == "type-aqi") {
-        imgUrl = `./AQI/data/png/Y${dayhour.slice(0, 4)}-M${dayhour.slice(4, 6)}-D${dayhour.slice(6, 8)}/CHAP_NRT_AQI_${dayhour}00.png`;
+        imgUrl = `./AQI/data/webp/Y${dayhour.slice(0, 4)}/M${dayhour.slice(4, 6)}/D${dayhour.slice(6, 8)}/CHAP_NRT_AQI_${dayhour}00.webp`;
     } else if (selectType == "type-pm2.5") {
-        imgUrl = `./PM2_5/data/png/Y${dayhour.slice(0, 4)}-M${dayhour.slice(4, 6)}-D${dayhour.slice(6, 8)}/CHAP_NRT_PM2_5_${dayhour}00.png`;
+        imgUrl = `./PM2_5/data/webp/Y${dayhour.slice(0, 4)}/M${dayhour.slice(4, 6)}/D${dayhour.slice(6, 8)}/CHAP_NRT_PM2_5_${dayhour}00.webp`;
     } else if (selectType == "type-pm10") {
-        imgUrl = `./PM10/data/png/Y${dayhour.slice(0, 4)}-M${dayhour.slice(4, 6)}-D${dayhour.slice(6, 8)}/CHAP_NRT_PM10_${dayhour}00.png`;
+        imgUrl = `./PM10/data/webp/Y${dayhour.slice(0, 4)}/M${dayhour.slice(4, 6)}/D${dayhour.slice(6, 8)}/CHAP_NRT_PM10_${dayhour}00.webp`;
     } else if (selectType == "type-no2") {
-        imgUrl = `./NO2/data/png/Y${dayhour.slice(0, 4)}-M${dayhour.slice(4, 6)}-D${dayhour.slice(6, 8)}/CHAP_NRT_NO2_${dayhour}00.png`;
+        imgUrl = `./NO2/data/webp/Y${dayhour.slice(0, 4)}/M${dayhour.slice(4, 6)}/D${dayhour.slice(6, 8)}/CHAP_NRT_NO2_${dayhour}00.webp`;
     } else if (selectType == "type-so2") {
-        imgUrl = `./SO2/data/png/Y${dayhour.slice(0, 4)}-M${dayhour.slice(4, 6)}-D${dayhour.slice(6, 8)}/CHAP_NRT_SO2_${dayhour}00.png`;
+        imgUrl = `./SO2/data/webp/Y${dayhour.slice(0, 4)}/M${dayhour.slice(4, 6)}/D${dayhour.slice(6, 8)}/CHAP_NRT_SO2_${dayhour}00.webp`;
     } else if (selectType == "type-co") {
-        imgUrl = `./CO/data/png/Y${dayhour.slice(0, 4)}-M${dayhour.slice(4, 6)}-D${dayhour.slice(6, 8)}/CHAP_NRT_CO_${dayhour}00.png`;
+        imgUrl = `./CO/data/webp/Y${dayhour.slice(0, 4)}/M${dayhour.slice(4, 6)}/D${dayhour.slice(6, 8)}/CHAP_NRT_CO_${dayhour}00.webp`;
     } else {
-        imgUrl = `./O3/data/png/Y${dayhour.slice(0, 4)}-M${dayhour.slice(4, 6)}-D${dayhour.slice(6, 8)}/CHAP_NRT_O3_${dayhour}00.webp`;
+        imgUrl = `./O3/data/webp/Y${dayhour.slice(0, 4)}/M${dayhour.slice(4, 6)}/D${dayhour.slice(6, 8)}/CHAP_NRT_O3_${dayhour}00.webp`;
     }
 
     // 创建一个 Image 对象用于预加载图片
