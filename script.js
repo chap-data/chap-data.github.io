@@ -347,7 +347,7 @@ function updateMEE(dayhour) {
                     else if (field == "PM10") { fieldLabel = 'PM<sub>10</sub>' }
                     else if (field == "NO2") { fieldLabel = 'NO<sub>2</sub>' }
                     else if (field == "SO2") { fieldLabel = 'SO<sub>2</sub>' }
-                    else if (field == "O3") { fieldLabel == 'O<sub>3</sub>' }
+                    else if (field == "O3") { fieldLabel = 'O<sub>3</sub>' }
                     // popupContent = `${name}<br>${field_}: ${val}`;
                     let popupContent = `
                     <div style="min-width:100px; text-align:center;">
