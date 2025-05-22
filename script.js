@@ -333,7 +333,7 @@ function updateMEE(dayhour) {
                     let val = feature.properties[field];
                     return L.circleMarker(latlng, {
                         radius: 4,
-                        fillColor: getColor(field,val),
+                        fillColor: getColor(field, val),
                         color: "#fff",
                         weight: 1,
                         opacity: 1,
@@ -341,14 +341,19 @@ function updateMEE(dayhour) {
                     });
                 },
                 onEachFeature: function (feature, layer) {
-                    let name = feature.properties.name || "";
                     let val = feature.properties[field];
-                    if (field = "PM2_5"){field_ = 'PM<sub>2.5</sub>'};
-                    if (field = "PM10"){field_ = 'PM<sub>10</sub>'};
-                    if (field = "NO2"){field_ = 'NO<sub>2</sub>'};
-                    if (field = "SO2"){field_ = 'SO<sub>2</sub>'};
-                    if (field = "O3"){field_ = 'O<sub>3</sub>'};
-                    popupContent = `${name}<br>${field_}: ${val}`;
+                    let fieldLabel = field;
+                    if (field == "PM2_5") { fieldLabel = 'PM<sub>2.5</sub>' }
+                    else if (field == "PM10") { fieldLabel = 'PM<sub>10</sub>' }
+                    else if (field == "NO2") { fieldLabel = 'NO<sub>2</sub>' }
+                    else if (field == "SO2") { fieldLabel = 'SO<sub>2</sub>' }
+                    else if (field == "O3") { fieldLabel == 'O<sub>3</sub>' }
+                    // popupContent = `${name}<br>${field_}: ${val}`;
+                    let popupContent = `
+                    <div style="min-width:100px; text-align:center;">
+                        <div style="font-weight:bold;font-size:16px;margin-bottom:4px;">${fieldLabel} : ${val}</div>
+                    </div>
+                    `;
                     layer.bindPopup(popupContent);
                 }
             }).addTo(map);
@@ -391,7 +396,7 @@ function updateImageOverlay(dayhour) {
     } else if (selectType == "type-co") {
         imgUrl = `./CO/data/png/Y${dayhour.slice(0, 4)}-M${dayhour.slice(4, 6)}-D${dayhour.slice(6, 8)}/CHAP_NRT_CO_${dayhour}00.png`;
     } else {
-        imgUrl = `./O3/data/png/Y${dayhour.slice(0, 4)}-M${dayhour.slice(4, 6)}-D${dayhour.slice(6, 8)}/CHAP_NRT_O3_${dayhour}00.png`;
+        imgUrl = `./O3/data/png/Y${dayhour.slice(0, 4)}-M${dayhour.slice(4, 6)}-D${dayhour.slice(6, 8)}/CHAP_NRT_O3_${dayhour}00.webp`;
     }
 
     // 创建一个 Image 对象用于预加载图片
