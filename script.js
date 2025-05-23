@@ -344,11 +344,11 @@ function updateMEE(dayhour) {
                     let val = feature.properties[field];
                     let fieldLabel = field;
 
-                    if (field == "PM2_5") { fieldLabel = 'PM<sub>2.5</sub>';    val = `${val}  ug/m<sup>3</sup>`}
-                    else if (field == "PM10") { fieldLabel = 'PM<sub>10</sub>'; val = `${val}  ug/m<sup>3</sup>`}
-                    else if (field == "NO2") { fieldLabel = 'NO<sub>2</sub>';   val = `${val}  ug/m<sup>3</sup>`}
-                    else if (field == "SO2") { fieldLabel = 'SO<sub>2</sub>';   val = `${val}  ug/m<sup>3</sup>`}
-                    else if (field == "O3") { fieldLabel = 'O<sub>3</sub>';     val = `${val}  ug/m<sup>3</sup>`}
+                    if (field == "PM2_5") { fieldLabel = 'PM<sub>2.5</sub>';    val = `${val}  μg/m<sup>3</sup>`}
+                    else if (field == "PM10") { fieldLabel = 'PM<sub>10</sub>'; val = `${val}  μg/m<sup>3</sup>`}
+                    else if (field == "NO2") { fieldLabel = 'NO<sub>2</sub>';   val = `${val}  μg/m<sup>3</sup>`}
+                    else if (field == "SO2") { fieldLabel = 'SO<sub>2</sub>';   val = `${val}  μg/m<sup>3</sup>`}
+                    else if (field == "O3") { fieldLabel = 'O<sub>3</sub>';     val = `${val}  μg/m<sup>3</sup>`}
                     else if (field == "CO") {                                   val = `${val}  mg/m<sup>3</sup>`}
                     
                     let popupContent = `
