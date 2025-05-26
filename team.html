@@ -11,7 +11,7 @@
     <style>
         html, body {
             height: 100%;
-            overflow-y: auto;
+            overflow-y: hidden;
             margin: 0;
             padding: 0;
         }
@@ -19,6 +19,8 @@
         .team-section {
             padding: 10px 40px 40px 40px; /* 上方增加 120px 空间，避免内容被 fixed 的 header 遮挡 */
             background-color: #ffffff;
+            height: 100vh;          /* 高度占满整个可视区域 */
+            overflow-y: auto;       /* 仅这个区域可以滚动 */
         }
 
         .team-section h2 {
