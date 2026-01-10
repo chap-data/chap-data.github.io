@@ -390,7 +390,7 @@ function updateImageOverlay(dayhour) {
     if (selectType == "type-aqi") {
         imgUrl = `./AQI/data/webp/Y${dayhour.slice(0, 4)}/M${dayhour.slice(4, 6)}/D${dayhour.slice(6, 8)}/CHAP_NRT_AQI_${dayhour}00.webp`;
     } else if (selectType == "type-pm2.5") {
-        imgUrl = `./PM2_5/data/webp/Y${dayhour.slice(0, 4)}/M${dayhour.slice(4, 6)}/D${dayhour.slice(6, 8)}/CHAP_NRT_PM2_5_${dayhour}00.webp`;
+        imgUrl = `./PM2_5/data/webp/Y${dayhour.slice(0, 4)}/M${dayhour.slice(4, 6)}/D${dayhour.slice(6, 8)}/CHAP_NRT_PM2p5_${dayhour}00.webp`;
     } else if (selectType == "type-pm10") {
         imgUrl = `./PM10/data/webp/Y${dayhour.slice(0, 4)}/M${dayhour.slice(4, 6)}/D${dayhour.slice(6, 8)}/CHAP_NRT_PM10_${dayhour}00.webp`;
     } else if (selectType == "type-no2") {
