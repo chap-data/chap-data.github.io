@@ -131,7 +131,7 @@ function loadData(dayStr) {
     if (selectType == "type-aqi") {
         index_url = "./AQI/data/sta/index.json"
     } else if (selectType == "type-pm2.5") {
-        index_url = "./PM2_5/data/sta/index.json"
+        index_url = "./PM2p5/data/sta/index.json"
     } else if (selectType == "type-pm10") {
         index_url = "./PM10/data/sta/index.json"
     } else if (selectType == "type-no2") {
